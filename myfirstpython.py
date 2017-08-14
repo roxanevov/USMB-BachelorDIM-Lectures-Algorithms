@@ -14,3 +14,12 @@ for i in xrange(10):
     a=a+i
 print('a='+str(a))
 
+a=0
+for i in xrange(10):
+    a=a+i
+print('a='+str(a))
+a=0
+for i in xrange(10):
+    a=a+i
+print('a='+str(a))
+
