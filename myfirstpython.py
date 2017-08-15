@@ -5,10 +5,10 @@ for i in xrange(10):
     a=a+i
 print('a='+str(a))
 
-#redundant parenthesis
+#redundant parenthesis code smell
 if ((a>10)):
     print('a>10')
-elif a>5:
+elif a>15:
     print('a>5... never displayed...')
 #FIXME test if fixme is found
 
@@ -16,17 +16,19 @@ elif a>5:
 if a>10:
     if a>20:
         print('a est high')
+
+#code duplicates
 a=0
-for i in xrange(10):
+for i in xrange(11):
     a=a+i
 print('a='+str(a))
 
 a=0
-for i in xrange(10):
+for i in xrange(11):
     a=a+i
 print('a='+str(a))
 a=0
-for i in xrange(10):
+for i in xrange(11):
     a=a+i
 print('a='+str(a))
 
