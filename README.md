@@ -8,7 +8,7 @@ Students are expected to be familiar with programming. The aim is to get more fa
 
 1. Get familiar with maintainable codes using git, sonarcloud and doxygen. *Introduction* slides [here](https://docs.google.com/presentation/d/1xXrdokfxOUP-3b1fEPRfieUhOEez7FJeUtauMpjV4bk/edit?usp=sharing)
 
-2. Get familiar with unit testing and continuous integration using pytest and TravisCI. *Introduction* slides [here]()https://docs.google.com/presentation/d/1wb93gyr6JuIDfeDvqTkMBxoLulL_yOXDeYp9qR5EaFI/edit?usp=sharing
+2. Get familiar with unit testing and continuous integration using pytest and TravisCI. *Introduction* slides [here](https://docs.google.com/presentation/d/1wb93gyr6JuIDfeDvqTkMBxoLulL_yOXDeYp9qR5EaFI/edit?usp=sharing)
 
 3. Get sensible to performance concerns. Hand crafted codes vs libraries
 
