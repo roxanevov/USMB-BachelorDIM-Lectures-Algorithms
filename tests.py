@@ -1,3 +1,3 @@
 #Currently no tests available
-return 0
+exit(0)
 
