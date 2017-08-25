@@ -8,4 +8,4 @@ addons:
   sonarcloud:
     organization: albenoit-github
 # command to run tests
-#script: pytest
+script: pytest

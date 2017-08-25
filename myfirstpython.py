@@ -32,3 +32,6 @@ for i in xrange(11):
     a=a+i
 print('a='+str(a))
 
+def test_above10():
+   assert a>10
+
