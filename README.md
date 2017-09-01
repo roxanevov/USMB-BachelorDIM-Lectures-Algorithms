@@ -13,3 +13,5 @@ Students are expected to be familiar with programming. The aim is to get more fa
 3. Get sensible to performance concerns. Hand crafted codes vs libraries
 
 4. Get familiar with queues using RabbitMQ and CloudAMQP. *Introduction slides* [here](https://docs.google.com/presentation/d/1e-KtztT1KN91ynFhzSfDrdF8qvuYPadKe04ifyxtvrg/edit?usp=sharing)
+
+Evaluation will consist of continuous control and a final exam. A preliminary test is planned in the first session to check student entry levels.
