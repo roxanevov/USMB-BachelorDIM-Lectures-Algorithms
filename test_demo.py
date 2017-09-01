@@ -5,4 +5,4 @@
 
 def test_True():
     """ one of the simplest test that does nothing..."""
-    assert False
+    assert True
