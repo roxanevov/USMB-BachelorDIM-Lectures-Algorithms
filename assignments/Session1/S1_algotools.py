@@ -124,5 +124,64 @@ message='The reverse of {liste_values} is {res}'.format(liste_values=listSource,
 print(message)
 """
 
+#exercice4
+
+#matrix processing lib
+import numpy
+
+size_rows=10
+size_cols=10
+myMat=numpy.zeros([size_rows, size_cols], dtype=int)
+
+
+#set a value in a specific cell
+"""myMat[1,3]=1"""
+
+#filling someting in the matrix, the basic way
+"""for row in range(5,8):
+        for col in range(7,9):
+            myMat[¸row,col]=1
+"""
+
+#filling someting in the matrix, a nic way
+myMat[2:4,5:9]=1
+myMat[4:7,7:9]=numpy.ones([3,2])
+"""print(myMat[8,2])"""
+
+def roi_bbox(myMat):
+   ##
+   #basic function able to get bounding box
+   # @param myMat : the input matrix 
+    xmin=size_cols
+    xmax=0
+
+    ymin=size_rows
+    ymax=0
+    #output coordonee matrix
+    for y in xrange(size_rows):
+        for x in xrange(size_cols):
+            if myMat[y,x]==1:
+                if xmin>x:
+                    xmin=x
+                if xmax<x:
+                    xmax=x
+                if ymin>y:
+                    ymin=y
+                if ymax<y:
+                    ymax=y
+                    
+    bbox_coordonee=numpy.zeros([4, 2], dtype=int)
+    bbox_coordonee[0,:]=numpy.array([ymin, xmin])
+    bbox_coordonee[1,:]=numpy.array([ymin, xmax])
+    bbox_coordonee[2,:]=numpy.array([ymax, xmin])
+    bbox_coordonee[3,:]=numpy.array([ymax, xmax])
+    return bbox_coordonee
+
+"""
+#test roi_bbox
+result=roi_bbox(myMat)
+print(result)
+"""
+
 
 
