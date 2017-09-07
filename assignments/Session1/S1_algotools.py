@@ -56,3 +56,31 @@ result=average_above_zero(mylist)
 message='The average of positive samples of{liste_values} is {res}'.format(liste_values=mylist,res=result)
 print(message)
 """
+
+
+#exercice2
+
+def max_value(input_list):
+    ##
+    #basic function able to return the max value of a liste
+    # @param input_list : the input list to be scanned
+    # @throws an exception (ValueError) on an ampty list
+
+    #firs check if provied list is not empty
+    if len(input_list)==0:
+        raise ValueError('provided list is empty')
+    
+    #inti max_value    
+    max_value=input_list[0]
+    
+    
+    for item in input_list:
+        if max_value<item:
+            max_value=item    
+    return max_value
+ """   
+#test max_value
+mylist=[-1,2,3,4,7]
+result=max_value(mylist)
+print(result)
+"""
