@@ -90,25 +90,39 @@ def max_value(input_list):
             max_idx=idx
             
     return max_value,max_idx
+    
 """   
 #test max_value
 mylist=[-1,2,3,4,7]
 result=max_value(mylist)
 print(result)
 """
+
 def reverse_table(input_list):
+   ##
+   #basic function able to reverse a liste
+   # @param input_list : the input list to be scanned
+
+   #init lastIdx
+   lastIdx=len(input_list)
   
    for idx in xrange(len(input_list)/2):
+       lastIdx-=1
        temp=input_list[idx]
-       input_list[idx]=input_list[len(input_list)-idx-1]
-       input_list[len(input_list)-idx-1]=temp
+       input_list[idx]=input_list[lastIdx]
+       input_list[lastIdx]=temp
 
    return input_list
 
-"""   
-#test reverse_table
-mylist=[-1,2,3,4,7]
-result=reverse_table(mylist)
-print(result)
 """
+#test reverse_table
+import copy
+mylist=[-1,2,3,4,7]
+listSource=copy.deepcopy(mylist)
+result=reverse_table(mylist)
+message='The reverse of {liste_values} is {res}'.format(liste_values=listSource,res=result)
+print(message)
+"""
+
+
 
