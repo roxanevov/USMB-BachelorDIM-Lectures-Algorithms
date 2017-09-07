@@ -49,9 +49,10 @@ def average_above_zero(inpu_list):
     average=float(positive_values_sum)/positive_values_count
     print('Positive elements average is '+str(average))        
     return float(average)
-
+"""
  #the input list
 mylist=[1,2,3,4,-7]
 result=average_above_zero(mylist)
 message='The average of positive samples of{liste_values} is {res}'.format(liste_values=mylist,res=result)
 print(message)
+"""
