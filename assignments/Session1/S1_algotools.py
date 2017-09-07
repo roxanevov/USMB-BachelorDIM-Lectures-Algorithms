@@ -25,8 +25,7 @@ mylist_sum=mylist+mylist2
 
 #exerci 1
 
-
-def average_above_zero(inpu_list):
+def average_above_zero(input_list):
    
     
     positive_values_sum=0
@@ -72,15 +71,29 @@ def max_value(input_list):
     
     #inti max_value    
     max_value=input_list[0]
+    max_idx=0
     
-    
-    for item in input_list:
+    """for item in input_list:
         if max_value<item:
-            max_value=item    
-    return max_value
- """   
+            max_value=item 
+    """     
+    """    
+    #generic style : iterate over the range of liste indexes
+    for idx in range(len(input_list)):
+        if max_value<input_list[idx]:
+            max_value=input_list[idx] 
+            max_idx=idx
+    """     
+    for idx, item in enumerate(input_list):
+        if max_value<item:
+            max_value=item 
+            max_idx=idx
+            
+    return max_value,max_idx
+    
 #test max_value
 mylist=[-1,2,3,4,7]
 result=max_value(mylist)
 print(result)
-"""
+
+
