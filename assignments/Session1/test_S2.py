@@ -17,3 +17,13 @@ def test_average_above_zero_listPositive():
     myList = [1,2,3]
     algo.average_above_zero(myList)==2
 
+def test_average_above_zero_listNegative():
+    myList = [-1,-2,-3]
+    with pytest.raises(ZeroDivisionError) :
+        algo.average_above_zero(myList)
+
+def test_average_above_zero_listEmpty():
+    myList = []
+    with pytest.raises(ValueError) :
+        algo.average_above_zero(myList)
+

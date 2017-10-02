@@ -35,12 +35,14 @@ def average_above_zero(input_list):
     positive_values_sum=0
     positive_values_count=0
     
-    first_item=input_list[0]
+    #first_item=input_list[0]
     #init critical variable
     #Som=0
     #N=0
     
     #compute the average of positive elements of a list
+    if len(input_list)==0 :
+        raise ValueError()
     for item in input_list:
         if item>0:
             positive_values_sum+=item
@@ -49,6 +51,8 @@ def average_above_zero(input_list):
             print('This value is not positiv:'+str(item))
         else:
             print('This value is negative:'+str(item))
+        if positive_values_count==0:
+            raise ZeroDivisionError()
     average=float(positive_values_sum)/positive_values_count
     print('Positive elements average is '+str(average))        
     return float(average)
