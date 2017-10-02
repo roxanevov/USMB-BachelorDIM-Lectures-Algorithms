@@ -52,3 +52,7 @@ def test_max_value_listEmpty():
     input_list = []
     with pytest.raises(ValueError) :
         algo.max_value(input_list)
+        
+def test_reverse_table():
+    input_list = [1,2,3]
+    algo.reverse_table==[3,2,1]
