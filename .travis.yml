@@ -9,6 +9,6 @@ addons:
     organization: roxanevov-github
 # command to run tests
 script:
-  - pytest --cov assigments/Session1/
+  - pytest --cov assignments/Session1/
   - sonar-scanner        
   - coveralls
