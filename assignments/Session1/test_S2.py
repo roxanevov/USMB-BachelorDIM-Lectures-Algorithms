@@ -27,3 +27,28 @@ def test_average_above_zero_listEmpty():
     with pytest.raises(ValueError) :
         algo.average_above_zero(myList)
 
+
+def test_max_value_listPositive():
+    input_list=[1,2,3]
+    algo.max_value(input_list)==3
+
+def test_max_value_listNegativ():
+    input_list=[-1,-2,-3]
+    algo.max_value(input_list)==0
+  
+def test_max_value_listNul():
+    input_list=[0,0,0]
+    algo.max_value(input_list)==-1
+
+def test_max_value_listAlea():
+    input_list=[-1,0,5]
+    algo.max_value(input_list)==5
+
+def test_max_value_listFloat():
+    input_list=[-1,0.5,5.6]
+    algo.max_value(input_list)==5
+    
+def test_max_value_listEmpty():
+    input_list = []
+    with pytest.raises(ValueError) :
+        algo.max_value(input_list)
