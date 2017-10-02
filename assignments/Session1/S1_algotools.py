@@ -23,7 +23,11 @@ b=a+2
 mylist_sum=mylist+mylist2
 """
 
+
+
+    
 #exerci 1
+
 
 def average_above_zero(input_list):
    
@@ -33,8 +37,8 @@ def average_above_zero(input_list):
     
     first_item=input_list[0]
     #init critical variable
-    Som=0
-    N=0
+    #Som=0
+    #N=0
     
     #compute the average of positive elements of a list
     for item in input_list:
