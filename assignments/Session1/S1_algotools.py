@@ -178,11 +178,13 @@ def remove_whitespace(chaine):
 
 #Exercice 7
 
-liste=[1,2,3,4]
+#liste=[1,2,3,4]
 def shuffle(liste):
      ##
    #basic function adole to select random item
    # @param liste : the input liste
+    if type(liste)!=list :
+        raise TypeError("input must be a liste of integer")  
     tab=[]
     while len(liste):
         temp = alea(len(liste)-1)

@@ -20,12 +20,12 @@ def test_average_above_zero_listPositive():
 def test_average_above_zero_listNegative():
     myList = [-1,-2,-3]
     with pytest.raises(ZeroDivisionError) :
-        assert algo.average_above_zero(myList)
+        algo.average_above_zero(myList)
 
 def test_average_above_zero_listEmpty():
     myList = []
     with pytest.raises(ValueError) :
-       assert  algo.average_above_zero(myList)
+       algo.average_above_zero(myList)
 
 
 def test_max_value_listPositive():
@@ -51,7 +51,7 @@ def test_max_value_listFloat():
 def test_max_value_listEmpty():
     input_list = []
     with pytest.raises(ValueError) :
-        assert algo.max_value(input_list)
+        algo.max_value(input_list)
 
 def test_reverse_table():
     input_list =[1,2,3,4,5]
@@ -115,4 +115,16 @@ def test_remove_whitespace2():
 def test_remove_whitespace3():
     chaine=[1,2,3]
     with pytest.raises(TypeError) :
-        assert algo.remove_whitespace(chaine)
+        algo.remove_whitespace(chaine)
+
+import copy
+def test_shuffle():
+    liste=[1,2,3,4]
+    liste_before=copy.deepcopy(liste)
+    liste_after=algo.shuffle(liste)
+    assert sorted(liste_before)==sorted(liste_after)
+
+def test_shuffle2():
+    liste='abcd'
+    with pytest.raises(TypeError) :
+        algo.shuffle(liste)   
