@@ -153,9 +153,12 @@ def random_fill_sparse(myTab, vfill):
    # @param myTab : the input liste
    # @param vfill : the random number
     i=0
-    while i<=vfill:
-        myTab[alea(myTab.shape[0]-1),alea(myTab.shape[1]-1)] = 'X' 
-        i = i + 1
+    while i<vfill:
+        x=alea(myTab.shape[0]-1)
+        y=alea(myTab.shape[1]-1)
+        if myTab[x,y] != 'X' :
+            myTab[x,y] = 'X' 
+            i = i + 1
     return myTab
 #print random_fill_sparse(myTab,vfill)
        

@@ -89,5 +89,6 @@ def test_random_fill_sparse():
     v=size_rows*size_cols
     vfill=algo.alea(v)
     result=numpy.sum(algo.random_fill_sparse(myTab, vfill)=='X')
-    print result
     assert result==vfill
+    
+    
