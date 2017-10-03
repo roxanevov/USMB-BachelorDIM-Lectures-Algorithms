@@ -97,7 +97,7 @@ def max_value(input_list):
             max_value=item 
             max_idx=idx
             
-    return max_value,max_idx
+    return max_value
     
 '''  
 #test max_value
@@ -143,13 +143,13 @@ myMat=numpy.zeros([size_rows, size_cols], dtype=int)
 
 
 #set a value in a specific cell
-"""myMat[1,3]=1"""
+#myMat[1,3]=1
 
 #filling someting in the matrix, the basic way
-"""for row in range(5,8):
+for row in range(5,8):
         for col in range(7,9):
-            myMat[¸row,col]=1
-"""
+            myMat[row,col]=1
+
 
 #filling someting in the matrix, a nic way
 #myMat[2:4,5:9]=1
@@ -160,11 +160,13 @@ def roi_bbox(myMat):
    ##
    #basic function able to get bounding box
    # @param myMat : the input matrix 
+   
     xmin=size_cols
     xmax=0
 
     ymin=size_rows
     ymax=0
+    
     #output coordonee matrix
     for y in xrange(size_rows):
         for x in xrange(size_cols):
@@ -177,35 +179,36 @@ def roi_bbox(myMat):
                     ymin=y
                 if ymax<y:
                     ymax=y
-                    
+            
     bbox_coordonee=numpy.zeros([4, 2], dtype=int)
     bbox_coordonee[0,:]=numpy.array([ymin, xmin])
     bbox_coordonee[1,:]=numpy.array([ymin, xmax])
     bbox_coordonee[2,:]=numpy.array([ymax, xmin])
     bbox_coordonee[3,:]=numpy.array([ymax, xmax])
+   
     return bbox_coordonee
-'''
+
 #test roi_bbox
 result=roi_bbox(myMat)
 print(result)
-'''
+
 
 
 #Exercice 5
 from random import randint
 
-
+"""
 size_rows=2
 size_cols=5
-myTab=numpy.chararray([size_rows, size_cols])
+myTab=numpy.zeros([size_rows, size_cols], dtype=str)
 myTab[:]=' '
 
 v=size_rows*size_cols
-
+"""
 def alea(v) :
     return(randint(0, v));
 
-vfill=alea(v)
+#vfill=alea(v)
 
 
 def random_fill_sparse(myTab, vfill):
@@ -215,7 +218,6 @@ def random_fill_sparse(myTab, vfill):
    # @param vfill : the random number
     i=0
     while i<=vfill:
-        print i
         myTab[alea(myTab.shape[0]-1),alea(myTab.shape[1]-1)] = 'X' 
         i = i + 1
     return myTab
@@ -251,7 +253,6 @@ def shuffle(liste):
         temp = alea(len(liste)-1)
         tab.append(liste[temp])
         liste.pop(temp)
-        print len(liste)
     return tab
 #print shuffle(liste)
 
