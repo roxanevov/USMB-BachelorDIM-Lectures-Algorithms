@@ -52,7 +52,20 @@ def test_max_value_listEmpty():
     input_list = []
     with pytest.raises(ValueError) :
         assert algo.max_value(input_list)
-        
+
+def test_reverse_table():
+    input_list =[1,2,3,4,5]
+    assert algo.reverse_table(input_list)==[5,4,3,2,1]
+def test_reverse_table2():
+    input_list =[1,'b',3,'c',5]
+    assert algo.reverse_table(input_list)==[5,'c',3,'b',1]    
+def test_reverse_table3():
+    input_list =[]
+    assert algo.reverse_table(input_list)==[]   
+def test_reverse_table4():
+    input_list =[1,'' ,2,3]
+    assert algo.reverse_table(input_list)==[3,2, '',1]       
+    
 import numpy
 def test_roi_bbox_empty():
     size_rows=10
