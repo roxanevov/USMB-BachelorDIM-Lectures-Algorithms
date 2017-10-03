@@ -1,0 +1,29 @@
+#!/usr/bin/env python2
+# -*- coding: utf-8 -*-
+"""
+Created on Mon Oct  2 21:25:40 2017
+
+@author: roxane
+"""
+import sys
+from random import randint
+def throw_dice() :
+    return(randint(1, 6))
+
+tab=[]
+def ordiPlay():
+    return randint(0,1)
+
+test=raw_input('salut')
+print test
+'''def game(nbPlayers):
+    tab[nbPLayers]
+    finish=False
+    while finish==False:
+        while choisce==0 && dice != 1 :
+        choice=input('')
+'''        
+    
+    
+    
+

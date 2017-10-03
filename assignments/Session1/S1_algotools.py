@@ -99,12 +99,12 @@ def max_value(input_list):
             
     return max_value,max_idx
     
-"""   
+'''  
 #test max_value
 mylist=[-1,2,3,4,7]
 result=max_value(mylist)
 print(result)
-"""
+'''
 
 def reverse_table(input_list):
    ##
@@ -152,8 +152,8 @@ myMat=numpy.zeros([size_rows, size_cols], dtype=int)
 """
 
 #filling someting in the matrix, a nic way
-myMat[2:4,5:9]=1
-myMat[4:7,7:9]=numpy.ones([3,2])
+#myMat[2:4,5:9]=1
+#myMat[4:7,7:9]=numpy.ones([3,2])
 """print(myMat[8,2])"""
 
 def roi_bbox(myMat):
@@ -184,12 +184,65 @@ def roi_bbox(myMat):
     bbox_coordonee[2,:]=numpy.array([ymax, xmin])
     bbox_coordonee[3,:]=numpy.array([ymax, xmax])
     return bbox_coordonee
-
-"""
+'''
 #test roi_bbox
 result=roi_bbox(myMat)
 print(result)
-"""
+'''
 
 
+#Exercice 5
+from random import randint
 
+
+size_rows=2
+size_cols=5
+myTab=numpy.chararray([size_rows, size_cols])
+myTab[:]=' '
+
+#print myTab
+v=size_rows*size_cols
+
+def alea(v) :
+    return(randint(0, v));
+
+vfill=alea(v)
+
+
+def random_fill_sparse(myTab, vfill):
+    i=0
+    while i<=vfill:
+        #lign=alea(myTab.shape[1])
+        #col=alea(myTab.shape[0])
+        print i
+        myTab[alea(myTab.shape[0]-1),alea(myTab.shape[1]-1)] = 'X' 
+        i = i + 1
+    return myTab
+
+#print random_fill_sparse(myTab,vfill)
+        
+chaine='salut toi ca va '
+
+def remove_whitespace(chaine):
+    i=0
+    while i<len(chaine):
+        if chaine[i]==" ":
+            chaine=chaine[:i]+chaine[i+1:]
+        i= i+1
+    return chaine
+#print remove_whitespace(chaine)
+
+liste=[1,2,3,4]
+def shuffle(liste):
+    tab=[]
+    i = len(liste)
+    while len(liste):
+        temp = alea(len(liste)-1)
+        tab.append(liste[temp])
+        liste.pop(temp)
+        print len(liste)
+    return tab
+#print shuffle(liste)
+
+def game(nbPlayer):
+    
