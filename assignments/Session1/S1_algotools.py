@@ -200,7 +200,6 @@ size_cols=5
 myTab=numpy.chararray([size_rows, size_cols])
 myTab[:]=' '
 
-#print myTab
 v=size_rows*size_cols
 
 def alea(v) :
@@ -210,20 +209,26 @@ vfill=alea(v)
 
 
 def random_fill_sparse(myTab, vfill):
+     ##
+   #basic function adole to parse a liste whith random char
+   # @param myTab : the input liste
+   # @param vfill : the random number
     i=0
     while i<=vfill:
-        #lign=alea(myTab.shape[1])
-        #col=alea(myTab.shape[0])
         print i
         myTab[alea(myTab.shape[0]-1),alea(myTab.shape[1]-1)] = 'X' 
         i = i + 1
     return myTab
-
 #print random_fill_sparse(myTab,vfill)
-        
-chaine='salut toi ca va '
+       
+# Exercice 6
+chaine='hello world'
 
 def remove_whitespace(chaine):
+    ##
+   #basic function adole to parse a chaine and remove whitespace
+   # @param chaine : the input chaine
+   
     i=0
     while i<len(chaine):
         if chaine[i]==" ":
@@ -232,8 +237,14 @@ def remove_whitespace(chaine):
     return chaine
 #print remove_whitespace(chaine)
 
+
+#Exercice 7
+
 liste=[1,2,3,4]
 def shuffle(liste):
+     ##
+   #basic function adole to select random item
+   # @param liste : the input liste
     tab=[]
     i = len(liste)
     while len(liste):
@@ -244,5 +255,5 @@ def shuffle(liste):
     return tab
 #print shuffle(liste)
 
-def game(nbPlayer):
+
     
