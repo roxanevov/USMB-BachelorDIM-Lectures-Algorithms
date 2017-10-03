@@ -2,29 +2,6 @@
 
 #@autor: Roxane Vovard, LISTIC Lab, IUT Annecy le vieu
 #@brief a set of generic functions for data management
-"""
-# a variable
-a=1 #☺default type : int
-
-#an empty list
-mylist =[]
-
-#a filled list
-mylist2=[1,2,3]
-
-#append to a list
-mylist.append(10)
-
-#a buggy list
-mybuggylist=[1,'a',"Hi"]
-
-#operatops
-b=a+2
-mylist_sum=mylist+mylist2
-"""
-
-
-
     
 #exerci 1
 
@@ -34,11 +11,6 @@ def average_above_zero(input_list):
     
     positive_values_sum=0
     positive_values_count=0
-    
-    #first_item=input_list[0]
-    #init critical variable
-    #Som=0
-    #N=0
     
     #compute the average of positive elements of a list
     if len(input_list)==0 :
@@ -56,15 +28,7 @@ def average_above_zero(input_list):
     average=float(positive_values_sum)/positive_values_count
     print('Positive elements average is '+str(average))        
     return float(average)
-"""
- #the input list
-mylist=[1,2,3,4,-7]
-result=average_above_zero(mylist)
-message='The average of positive samples of{liste_values} is {res}'.format(liste_values=mylist,res=result)
-print(message)
-"""
-
-
+    
 #exercice2
 
 def max_value(input_list):
@@ -80,31 +44,13 @@ def max_value(input_list):
     #inti max_value    
     max_value=input_list[0]
     max_idx=0
-    
-    """for item in input_list:
-        if max_value<item:
-            max_value=item 
-    """     
-    """    
-    #generic style : iterate over the range of liste indexes
-    for idx in range(len(input_list)):
-        if max_value<input_list[idx]:
-            max_value=input_list[idx] 
-            max_idx=idx
-    """     
+      
     for idx, item in enumerate(input_list):
         if max_value<item:
             max_value=item 
             max_idx=idx
             
     return max_value
-    
-'''  
-#test max_value
-mylist=[-1,2,3,4,7]
-result=max_value(mylist)
-print(result)
-'''
 
 def reverse_table(input_list):
    ##
@@ -122,16 +68,6 @@ def reverse_table(input_list):
 
    return input_list
 
-"""
-#test reverse_table
-import copy
-mylist=[-1,2,3,4,7]
-listSource=copy.deepcopy(mylist)
-result=reverse_table(mylist)
-message='The reverse of {liste_values} is {res}'.format(liste_values=listSource,res=result)
-print(message)
-"""
-
 #exercice4
 
 #matrix processing lib
@@ -146,10 +82,10 @@ myMat=numpy.zeros([size_rows, size_cols], dtype=int)
 #myMat[1,3]=1
 
 #filling someting in the matrix, the basic way
-for row in range(5,8):
+'''for row in range(5,8):
         for col in range(7,9):
             myMat[row,col]=1
-
+'''
 
 #filling someting in the matrix, a nic way
 #myMat[2:4,5:9]=1
@@ -189,16 +125,16 @@ def roi_bbox(myMat):
     return bbox_coordonee
 
 #test roi_bbox
-result=roi_bbox(myMat)
-print(result)
+#result=roi_bbox(myMat)
+#print(result)
 
 
 
 #Exercice 5
 from random import randint
 
-"""
-size_rows=2
+
+"""size_rows=2
 size_cols=5
 myTab=numpy.zeros([size_rows, size_cols], dtype=str)
 myTab[:]=' '

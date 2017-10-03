@@ -70,7 +70,7 @@ def test_roi_bbox_1():
     size_cols=10
     myMat=numpy.zeros([size_rows, size_cols], dtype=int)
     myMat[1,3]=1
-    numpy.all(algo.roi_bbox(myMat) == [[1, 3],[1, 3],[1 ,3],[1, 3]])
+    assert numpy.all(algo.roi_bbox(myMat) == [[1, 3],[1, 3],[1 ,3],[1, 3]])
     
 def test_roi_bbox_2():
     size_rows=10
@@ -79,4 +79,15 @@ def test_roi_bbox_2():
     for row in range(5,8):
         for col in range(7,9):
             myMat[row,col]=1
-    numpy.all(algo.roi_bbox(myMat) == [[5, 7],[5, 8],[7, 7],[7, 8]])
+    assert numpy.all(algo.roi_bbox(myMat) == [[5, 7],[5, 8],[7, 7],[7, 8]])
+    
+
+def test_random_fill_sparse():
+    size_rows=2
+    size_cols=5
+    myTab=numpy.zeros([size_rows, size_cols], dtype=str)
+    v=size_rows*size_cols
+    vfill=algo.alea(v)
+    result=numpy.sum(algo.random_fill_sparse(myTab, vfill)=='X')
+    print result
+    assert result==vfill
