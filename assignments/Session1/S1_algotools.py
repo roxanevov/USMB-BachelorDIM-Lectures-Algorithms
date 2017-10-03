@@ -43,13 +43,9 @@ def max_value(input_list):
     
     #inti max_value    
     max_value=input_list[0]
-    max_idx=0
-      
     for idx, item in enumerate(input_list):
         if max_value<item:
             max_value=item 
-            max_idx=idx
-            
     return max_value
 
 def reverse_table(input_list):
@@ -58,13 +54,13 @@ def reverse_table(input_list):
    # @param input_list : the input list to be scanned
 
    #init lastIdx
-   lastIdx=len(input_list)
+   last_idx=len(input_list)
   
    for idx in xrange(len(input_list)/2):
-       lastIdx-=1
+       last_idx-=1
        temp=input_list[idx]
-       input_list[idx]=input_list[lastIdx]
-       input_list[lastIdx]=temp
+       input_list[idx]=input_list[last_idx]
+       input_list[last_idx]=temp
 
    return input_list
 
@@ -92,7 +88,7 @@ myMat=numpy.zeros([size_rows, size_cols], dtype=int)
 #myMat[4:7,7:9]=numpy.ones([3,2])
 """print(myMat[8,2])"""
 
-def roi_bbox(myMat):
+def roi_bbox(my_mat):
    ##
    #basic function able to get bounding box
    # @param myMat : the input matrix 
@@ -106,7 +102,7 @@ def roi_bbox(myMat):
     #output coordonee matrix
     for y in xrange(size_rows):
         for x in xrange(size_cols):
-            if myMat[y,x]==1:
+            if my_mat[y,x]==1:
                 if xmin>x:
                     xmin=x
                 if xmax<x:
@@ -125,7 +121,7 @@ def roi_bbox(myMat):
     return bbox_coordonee
 
 #test roi_bbox
-#result=roi_bbox(myMat)
+#result=roi_bbox(my_mat)
 #print(result)
 
 
@@ -147,19 +143,19 @@ def alea(v) :
 #vfill=alea(v)
 
 
-def random_fill_sparse(myTab, vfill):
+def random_fill_sparse(my_tab, vfill):
      ##
    #basic function adole to parse a liste whith random char
    # @param myTab : the input liste
    # @param vfill : the random number
     i=0
     while i<vfill:
-        x=alea(myTab.shape[0]-1)
-        y=alea(myTab.shape[1]-1)
-        if myTab[x,y] != 'X' :
-            myTab[x,y] = 'X' 
+        x=alea(my_tab.shape[0]-1)
+        y=alea(my_tab.shape[1]-1)
+        if my_tab[x,y] != 'X' :
+            my_tab[x,y] = 'X' 
             i = i + 1
-    return myTab
+    return my_tab
 #print random_fill_sparse(myTab,vfill)
        
 # Exercice 6
@@ -169,7 +165,8 @@ def remove_whitespace(chaine):
     ##
    #basic function adole to parse a chaine and remove whitespace
    # @param chaine : the input chaine
-   
+    if type(chaine)!=str :
+        raise TypeError("input must be a string")
     i=0
     while i<len(chaine):
         if chaine[i]==" ":
@@ -187,7 +184,6 @@ def shuffle(liste):
    #basic function adole to select random item
    # @param liste : the input liste
     tab=[]
-    i = len(liste)
     while len(liste):
         temp = alea(len(liste)-1)
         tab.append(liste[temp])

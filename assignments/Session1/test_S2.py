@@ -104,4 +104,15 @@ def test_random_fill_sparse():
     result=numpy.sum(algo.random_fill_sparse(myTab, vfill)=='X')
     assert result==vfill
     
-    
+def test_remove_whitespace():
+    chaine="hello world"
+    assert algo.remove_whitespace(chaine)=="helloworld"
+
+def test_remove_whitespace2():
+    chaine="1 2 3 4"
+    assert algo.remove_whitespace(chaine)=="1234"
+
+def test_remove_whitespace3():
+    chaine=[1,2,3]
+    with pytest.raises(TypeError) :
+        assert algo.remove_whitespace(chaine)
