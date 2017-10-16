@@ -13,10 +13,13 @@ url = os.environ.get('CLOUDAMQP_URL', 'amqp://paissqpu:e0dPXbF2vE0J1twC7IW53wBUW
 params = pika.URLParameters(url)
 connection = pika.BlockingConnection(params)
 channel = connection.channel() # start a channel
-
+count=0
 channel.queue_declare(queue='presentation')
 
 def callback(ch, method, properties, body):
+  global count
+  count=count+1
+  print("Nombre de messages lu %r"% count)
   print(" [x] Received %r" % body)
 
 channel.basic_consume(callback,
